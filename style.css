@@ -1,0 +1,66 @@
+/* Google Fontlardan import ettiğiniz Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global stil tanımı: Bütün elementler kutu modelini sınırlayarak hesaplasın */
+* {
+    box-sizing: border-box;
+}
+
+/* Sayfa geneli stil tanımı */
+body {
+    /* Yazı fontunu 'Inter' olarak belirle, eğer Inter yüklü değilse sans-serif kullan */
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh; /* Sayfanın tamamını kapla */
+    justify-content: center; /* İçeriği yatayda merkezle */
+    margin: 0;
+    /* İçeri taşan kısmı gösterme, gizle */
+    overflow: hidden;
+}
+
+/* Ana içerik konteyneri */
+.container {
+    display: flex;
+    width: 60vw; /* Sayfanın genişliğinin 90%'u */
+}
+
+/* Panellerin stil tanımı */
+.panel {
+    background-size: auto 100%; /* Arka plan resmi boyutlandırma */
+    background-position: center; /* Arka planı yatayda ve dikeyde ortala */
+    background-repeat: no-repeat; /* Arka plan resmini tekrar etme */
+    height: 80vh; /* Yükseklik: Sayfanın yüksekliğinin 80%'i */
+    /* İmleç üstüne gelindiğinde işaretçi şeklini değiştir */
+    cursor: pointer;
+    border-radius: 50px; /* Panellerin kenarları oval biçimde */
+    flex: 0.5; /* Yatayda genişlik: Konteynerin yarısına ayarla */
+    margin: 10px; /* Dış kenar boşluğu */
+    position: relative; /* Pozisyon: İçerik içinde konumlandırma */
+    transition: flex 0.7s ease-in; /* Geçiş efekti tanımı */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* İnce bir kenar çizgisi ekleyin */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* İnce bir gölge ekleyin */
+    
+}
+
+/* Panel başlığının stil tanımı */
+.panel h3 {
+    font-size: 20px; /* Yazı boyutu */
+    position: absolute; /* Pozisyon: Mutlak konumlandırma */
+    bottom: 20px; /* Alttan 20px boşluk */
+    left: 50%; /* Sol kenardan ortalama */
+    margin: 0; /* Dış boşluk */
+    opacity: 0; /* Opaklık: Başlangıçta görünmez */
+}
+
+/* Aktif panelin stil tanımı */
+.panel.active {
+    flex: 20px; /* Yatayda genişlik: 10px olarak ayarla */
+}
+
+/* Aktif panel başlığının stil tanımı */
+.panel.active h3 {
+    text-decoration: underline; /* Alt çizgi stilini uygula */
+    opacity: 1; /* Opaklık: Tamamen görünür yap */
+    transition: opacity 0.3s ease-in 0.4s; /* Geçiş efekti tanımı */
+}
